@@ -30,9 +30,8 @@ createApp({
                     title: '2024 Softail Standard',
                     text: 'Un modello stile bobber grezzo ed essenziale, il Softail Standard di Harley-Davidson è una tela bianca ideale da personalizzare.',
                 }
-            ]
+            ],
+            currentImg: 0
         };
     }
 }).mount('#application');
-
-

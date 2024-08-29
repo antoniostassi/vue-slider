@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Harley Davidson Show-off</title>
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <a href="https://www.harley-davidson.com" target="_blank"><img src="assets/img/logo.png" alt="Logo" id="logo"></a>
+        </div>
+        <!-- <h1 style="text-align:center; color:white;">Carosello con Array Object</h1> -->
+        <div class="container d-flex">
+            <div class="image-container position-relative">
+                <div id = "backward" class="backward position-absolute"><i class="fa-solid fa-circle-chevron-left"></i></div>
+                <div id = "forward" class="position-absolute"><i class="fa-solid fa-circle-chevron-right"></i></div>
+                <div id = "description" class="position-absolute"></div>
+            </div>
+            <div id="preview"></div>
+        </div>
+        
+        <script src="assets/js/script.js"></script> <!-- Collegamento con il JS -->
+    </body>
+</html>

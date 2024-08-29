@@ -19,8 +19,18 @@
                 <div class="image-container position-relative">
                     <div id = "backward" class="backward position-absolute"><i class="fa-solid fa-circle-chevron-left"></i></div>
                     <div id = "forward" class="position-absolute"><i class="fa-solid fa-circle-chevron-right"></i></div>
-                    <div id = "description" class="position-absolute"></div>
+                    <div id = "description" class="position-absolute">
+                        <h3 v-for="element, carouselIndex in carouselImages" :class="carouselIndex == currentImg ? '':'d-none'">
+                            {{ element.title }}
+                        </h3>
+                        <p v-for="element, carouselIndex in carouselImages" :class="carouselIndex == currentImg ? '':'d-none'">
+                            {{ element.text }}
+                        </p>
+                    </div>
+                    <img v-for="(element, carouselIndex) in carouselImages" :src="element.image" :alt="element.title" :class="carouselIndex == currentImg ? '':'d-none'">
                 </div>
+                
+                
                 <div id="preview"></div>
             </div>
         </div>

@@ -31,7 +31,9 @@
                 </div>
                 
                 
-                <div id="preview"></div>
+                <div id="preview">
+                    <img v-for="(element, carouselIndex) in carouselImages" :src="element.image" :alt="element.title" :class="carouselIndex == currentImg ? 'selected-image':''">
+                </div>
             </div>
         </div>
         

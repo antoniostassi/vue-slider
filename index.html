@@ -16,22 +16,28 @@
             </div>
             <!-- <h1 style="text-align:center; color:white;">Carosello con Array Object</h1> -->
             <div class="container d-flex">
-                <div class="image-container position-relative">
-                    <div id = "backward" class="backward position-absolute"><i class="fa-solid fa-circle-chevron-left"></i></div>
+                <div class="image-container position-relative"> <!-- Container Immagini -->
+
+                    <div id = "backward" class="backward position-absolute" @click="if(currentImg > 0){currentImg--;} else {currentImg = carouselImages.length-1}"><i class="fa-solid fa-circle-chevron-left"></i></div>
                     <div id = "forward" class="position-absolute" @click="if(currentImg < carouselImages.length - 1) {currentImg++;} else {currentImg=0;}"><i class="fa-solid fa-circle-chevron-right"></i></div>
+                    
                     <div id = "description" class="position-absolute">
                         <h3 v-for="element, carouselIndex in carouselImages" :class="carouselIndex == currentImg ? '':'d-none'">
-                            {{ element.title }}
+                            {{ element.title }} <!-- Scorre l'array di oggetti e prende l'elemento.title, settando la classe d-none per le immagini disattivate -->
                         </h3>
                         <p v-for="element, carouselIndex in carouselImages" :class="carouselIndex == currentImg ? '':'d-none'">
-                            {{ element.text }}
+                            {{ element.text }} <!-- Scorre l'array di oggetti e prende l'elemento.text, settando la classe d-none per le immagini disattivate -->
                         </p>
                     </div>
+
                     <img v-for="(element, carouselIndex) in carouselImages" :src="element.image" :alt="element.title" :class="carouselIndex == currentImg ? '':'d-none'">
+                    <!-- Scorre l'array di oggetti e prende l'elemento.image, settando la classe d-none per le immagini disattivate -->
+                
                 </div>
                 
-                <div id="preview">
-                    <img v-for="(element, carouselIndex) in carouselImages" :src="element.image" :alt="element.title" :class="carouselIndex == currentImg ? 'selected-image':''">
+                <div id="preview"> <!-- Container preview -->
+                    <img v-for="(element, carouselIndex) in carouselImages" @click="currentImg = carouselIndex" :src="element.image" :alt="element.title" :class="carouselIndex == currentImg ? 'selected-image':''">
+                    <!-- Scorre l'array di oggetti e prende l'elemento.image, settando la classe d-none per le immagini disattivate -->
                 </div>
             </div>
         </div>

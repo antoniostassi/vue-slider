@@ -15,7 +15,7 @@
                 <a href="https://www.harley-davidson.com" target="_blank"><img src="assets/img/logo.png" alt="Logo" id="logo"></a>
             </div>
             <!-- <h1 style="text-align:center; color:white;">Carosello con Array Object</h1> -->
-            <div class="container d-flex">
+            <div class="container d-flex" @mouseout="autoPlay();" @mouseover="pausePlay();">
                 <div class="image-container position-relative"> <!-- Container Immagini -->
 
                     <div id = "backward" class="backward position-absolute" @click="if(currentImg > 0){currentImg--;} else {currentImg = carouselImages.length-1}"><i class="fa-solid fa-circle-chevron-left"></i></div>

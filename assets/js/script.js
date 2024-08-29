@@ -31,7 +31,28 @@ createApp({
                     text: 'Un modello stile bobber grezzo ed essenziale, il Softail Standard di Harley-Davidson è una tela bianca ideale da personalizzare.',
                 }
             ],
+            timerSeconds: 2000,
             currentImg: 0
         };
+    },
+    
+    methods: {
+        autoPlay() {
+            this.timer = setInterval(() => {
+                if(this.currentImg > 4) {
+                    this.currentImg = 0;
+                } else {
+                    this.currentImg++;
+                }
+            }, this.timerSeconds)
+        },
+        pausePlay() {
+            clearInterval(this.timer);
+        }
+    },
+
+    beforeMount() {
+        this.autoPlay();
     }
+
 }).mount('#application');
